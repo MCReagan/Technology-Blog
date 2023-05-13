@@ -1,0 +1,32 @@
+:root {
+    --brown: #231010;
+    --green: #D9EAD3;
+}
+*{
+    border: 1px solid red;
+}
+header {
+    background: var(--brown);
+    min-height: 175px;
+}
+
+body {
+    background: var(--green);
+}
+
+.nav-link {
+    color: var(--green);
+}
+
+.title {
+    padding: 10px;
+    background: var(--green);
+    margin-left: 50px;
+    color: var(--brown);
+    max-width: 370px;
+}
+
+.container-fluid {
+    margin-left: 50px;
+    padding: 0;
+}
