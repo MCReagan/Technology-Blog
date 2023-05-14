@@ -1,0 +1,47 @@
+[
+    {
+        "title": "My First Blog Post",
+        "text": "This is my first blog post",
+        "user_id": 1
+    },
+    {
+        "title": "My Second Blog Post",
+        "text": "This is my second blog post",
+        "user_id": 1
+    },
+    {
+        "title": "My Third Blog Post",
+        "text": "This is my third blog post",
+        "user_id": 1
+    },
+    {
+        "title": "My First Blog Post",
+        "text": "This is my first blog post",
+        "user_id": 2
+    },
+    {
+        "title": "My Second Blog Post",
+        "text": "This is my second blog post",
+        "user_id": 2
+    },
+    {
+        "title": "My Third Blog Post",
+        "text": "This is my third blog post",
+        "user_id": 2
+    },
+    {
+        "title": "My First Blog Post",
+        "text": "This is my first blog post",
+        "user_id": 3
+    },
+    {
+        "title": "My Second Blog Post",
+        "text": "This is my second blog post",
+        "user_id": 3
+    },
+    {
+        "title": "My Third Blog Post",
+        "text": "This is my third blog post",
+        "user_id": 3
+    }
+]

@@ -1,12 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
-class User extends Model {
-    async checkPassword(loginPw) {
-        return await bcrypt.compare(loginPw, this.password);
-    }
-}
+class User extends Model {}
 
 User.init(
     {
@@ -23,9 +18,8 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            set(value) {
-                const hashedPassword = bcrypt.hashSync(value, 10);
-                this.setDataValue('password', hashedPassword);
+            validate: {
+                len: [6],
             },
         },
     },
