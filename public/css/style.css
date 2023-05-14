@@ -49,6 +49,30 @@ h1 {
     font-size: 37px;
 }
 
+.blog-container {
+    border: 4px solid var(--brown);
+    margin: 40px;
+}
+
+.blog-title {
+    background-color: var(--brown);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+}
+
+.blog-text {
+    padding: 15px 15px;
+    margin: 0;
+    align-items: center;
+}
+
+h3, h5, h6 {
+    margin: 0;
+}
+
 @media screen and (max-width: 992px) {
     header {
         display: flex;
