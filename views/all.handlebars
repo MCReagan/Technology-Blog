@@ -1,14 +1,16 @@
-{{!-- <div class="blog-container">
+{{#each blogs}}
+<div class="blog-container">
     <div class="blog-title">
         {{title}}
-        {{created_at}}
+        <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
     </div>
     <div class="blog-text">
         {{text}}
     </div>
-</div> --}}
+</div>
+{{/each}}
 
-<div class="blog-container">
+{{!-- <div class="blog-container">
     <div class="blog-title">
         <h3>My First Blog Post!</h3>
         <h6>Posted by Xandromus on 5/8/2020</h6>
@@ -17,4 +19,4 @@
         <h5>This is my first post! Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur architecto aperiam, cumque quidem cupiditate fugiat iste unde fuga eum pariatur porro facilis est repellat, nulla tempora asperiores nesciunt maiores.
         </h5>
     </div>
-</div>
+</div> --}}
