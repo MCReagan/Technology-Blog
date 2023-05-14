@@ -18,7 +18,7 @@
                 <div class="nav-item">
                     <a class="nav-link" aria-current="page" href="/">Home</a>
                 </div>
-                {{#if isLoggedIn}}
+                {{#if loggedIn}}
                 <div class="nav-item">
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </div>
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="/login">Dashboard</a>
                 </div>
                 {{/if}}
-                {{#if isLoggedIn}}
+                {{#if loggedIn}}
                 <div class="nav-item">
                 <button id="logout" class="btn-no-style">Logout</button>
                 </div>
