@@ -9,8 +9,8 @@
 
 header {
     background: var(--brown);
-    min-height: 175px;
-    max-height: 175px;
+    min-height: 150px;
+    max-height: 150px;
 }
 
 body {
