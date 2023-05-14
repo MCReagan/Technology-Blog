@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-    console.log('bing')
+    console.log('bing');
     // const username = document.querySelector('#usernameInput').value.trim();
     // const password = document.querySelector('#passwordInput').value.trim();
 
