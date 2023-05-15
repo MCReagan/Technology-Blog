@@ -19,10 +19,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/dashboard', async (req, res) => {
-    res.render('dashboard');
-});
-
 router.get('/signup', async (req, res) => {
     res.render('signup');
 });
