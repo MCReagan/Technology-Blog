@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Blog.create({
         title: req.body.title,
-        content: req.body.content,
+        text: req.body.text,
         user_id: req.session.user_id
     })
         .then(dbblogData => res.json(dbblogData))
@@ -73,7 +73,7 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Blog.update({
         title: req.body.title,
-        content: req.body.content
+        text: req.body.text
     }, {
         where: {
             id: req.params.id

@@ -87,6 +87,11 @@ a {
   text-decoration: none;
 }
 
+#newBlog {
+    background-color: var(--brown);
+    color: var(--green)
+}
+
 @media screen and (max-width: 992px) {
     header {
         display: flex;
