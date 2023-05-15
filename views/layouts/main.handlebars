@@ -18,18 +18,12 @@
                 <div class="nav-item">
                     <a class="nav-link" aria-current="page" href="/">Home</a>
                 </div>
-                {{#if loggedIn}}
                 <div class="nav-item">
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </div>
-                {{else}}
-                <div class="nav-item">
-                    <a class="nav-link" href="/login">Dashboard</a>
-                </div>
-                {{/if}}
                 {{#if loggedIn}}
                 <div class="nav-item">
-                <button id="logout" class="nav-link">Logout</button>
+                <a href="/" id="logout" class="nav-link">Logout</a>
                 </div>
                 {{else}}
                 <div class="nav-item">

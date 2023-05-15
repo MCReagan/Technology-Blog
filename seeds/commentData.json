@@ -1,0 +1,17 @@
+[
+    {
+        "comment_text": "first comment",
+        "user_id": 1,
+        "blog_id": 1
+    },
+    {
+        "comment_text": "second comment",
+        "user_id": 2,
+        "blog_id": 2
+    },
+    {
+        "comment_text": "third comment",
+        "user_id": 3,
+        "blog_id": 3
+    }
+]
