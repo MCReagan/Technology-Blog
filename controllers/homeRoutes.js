@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findAll({
             include: [
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
             ]
         });
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
-        res.render('all', { blogs });
+        res.render('all', { blogs, loggedIn: true });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -91,6 +92,5 @@ router.get('/blog-comments', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 
 module.exports = router;

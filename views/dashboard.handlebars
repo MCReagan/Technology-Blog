@@ -1,7 +1,7 @@
 {{#each blogs}}
 <div class="blog-container">
     <div class="blog-title">
-        <h5>{{title}}</h5>
+        <a href="/api/blogs/{{id}}">{{title}}</a>
         <h6>Posted on {{format_date createdAt}}</h6>
     </div>
     <div class="blog-text">

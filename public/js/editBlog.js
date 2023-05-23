@@ -1,7 +1,8 @@
 const editFormHandler = async (event) => {
+    event.preventDefault();
     try {
         const title = document.querySelector('input[name="blog-title"]').value.trim();
-        const content = document.querySelector('input[name="content"]').value.trim();
+        const text = document.querySelector('input[name="content"]').value.trim();
 
         const id = window.location.toString().split('/')[
             window.location.toString().split('/').length - 1
@@ -10,9 +11,8 @@ const editFormHandler = async (event) => {
         const response = await fetch(`/api/blogs/${id}`, {
             method: 'PUT',
             body: JSON.stringify({
-                blog_id: id,
                 title,
-                content
+                text
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ const editFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard/');
+            document.location.replace('/dashboard');
         }
 
     } catch (err) {
@@ -28,4 +28,4 @@ const editFormHandler = async (event) => {
     }
 }
 
-document.querySelector('.edit-blog-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-blog-form').addEventListener('click', editFormHandler);

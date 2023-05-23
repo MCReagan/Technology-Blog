@@ -49,7 +49,9 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No blog found with this id' });
                 return;
             }
-            res.json(dbblogData);
+            const blog = dbblogData.get({plain: true})
+            console.log(blog)
+            res.render('edit-blog', { blog, loggedIn: true })
         })
         .catch(err => {
             console.log(err);
@@ -71,6 +73,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
+    console.log(req.body, req.params)
     Blog.update({
         title: req.body.title,
         text: req.body.text
@@ -79,6 +82,7 @@ router.put('/:id', withAuth, (req, res) => {
             id: req.params.id
         }
     }).then(dbblogData => {
+        console.log(dbblogData)
         if (!dbblogData) {
             res.status(404).json({ message: 'No blog found with this id' });
             return;
