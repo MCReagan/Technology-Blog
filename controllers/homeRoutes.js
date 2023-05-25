@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
-const sequelize = require('../config/connection');
-const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const blogData = await Blog.findAll({
             include: [
@@ -14,7 +12,8 @@ router.get('/', withAuth, async (req, res) => {
             ]
         });
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
-        res.render('all', { blogs, loggedIn: true });
+        console.log(blogs)
+        res.render('all', { blogs, loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -34,18 +33,24 @@ router.get('/login', async (req, res) => {
 
 router.get('/blog/:id', async (req, res) => {
     try {
-        const blogData = Blog.findOne({
+        const blogData = await Blog.findOne({
             where: {
                 id: req.params.id
             },
-            include: [{
-                model: Comment,
-                attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
-                include: {
+            include: [
+                {
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                },
+                {
                     model: User,
-                    attributes: ['username']
-                }
-            }]
+                    attributes: ['username'],
+                },
+            ],
         });
         if (!blogData) {
             res.status(404).json({ message: 'No blog found with this id' });
