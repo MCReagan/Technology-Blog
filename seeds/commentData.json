@@ -1,17 +1,32 @@
 [
     {
-        "comment_text": "first comment",
+        "comment_text": "Wow, very insightful!",
         "user_id": 1,
+        "blog_id": 4
+    },
+    {
+        "comment_text": "Great writing!",
+        "user_id": 1,
+        "blog_id": 5
+    },
+    {
+        "comment_text": "Can't wait to try this!",
+        "user_id": 1,
+        "blog_id": 6
+    },
+    {
+        "comment_text": "Interesting subject matter.",
+        "user_id": 2,
         "blog_id": 1
     },
     {
-        "comment_text": "second comment",
+        "comment_text": "I love this.",
         "user_id": 2,
         "blog_id": 2
     },
     {
-        "comment_text": "third comment",
-        "user_id": 3,
+        "comment_text": "This is everything!",
+        "user_id": 2,
         "blog_id": 3
     }
 ]
